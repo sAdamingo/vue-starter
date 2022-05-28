@@ -6,6 +6,7 @@
       <login-form @login="logIn($event)" :button-label="Math.random() < 0.5 ? 'Etykieta A' : 'Etykieta B'"></login-form>        </div>
     <div v-else>
         <h1>Witaj {{email}}</h1>
+      <meeting-page></meeting-page>
         <button class="logOut" @click="logIn()">Wyloguj!</button>
     </div>
   </div>
@@ -14,6 +15,7 @@
 <script>
 import 'milligram';
 import LoginForm from "./LoginForm";
+import MeetingPage from "@/MeetingPage";
 export default {
   data() {
     return {
@@ -30,7 +32,7 @@ export default {
       this.isLogged = !this.isLogged;
     }
   },
-  components: {LoginForm},
+  components: {MeetingPage, LoginForm},
 }
 </script>
 
