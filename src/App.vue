@@ -1,8 +1,9 @@
 <template>
   <div>
     <div v-if="isLogged">
-       <login-form @login="logIn($event)"></login-form>
-        </div>
+      <login-form @login="logIn($event)" button-label="Wejdź"></login-form>
+      <login-form @login="logIn($event)" button-label="Wleć"></login-form>
+      <login-form @login="logIn($event)" :button-label="Math.random() < 0.5 ? 'Etykieta A' : 'Etykieta B'"></login-form>        </div>
     <div v-else>
         <h1>Witaj {{email}}</h1>
         <button class="logOut" @click="logIn()">Wyloguj!</button>
